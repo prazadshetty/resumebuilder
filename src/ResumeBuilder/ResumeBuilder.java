@@ -17,7 +17,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
     public ResumeBuilder() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,23 +53,23 @@ public class ResumeBuilder extends javax.swing.JFrame {
         emailLabel = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Submit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        projectNameField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        projectDescriptionField1 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        projectNameField2 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        projectDescriptionField2 = new javax.swing.JTextArea();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        projectNameField3 = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        projectDescriptionField3 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        projectNameField4 = new javax.swing.JTextField();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
+        projectDescriptionField4 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -144,47 +144,47 @@ public class ResumeBuilder extends javax.swing.JFrame {
 
         jLabel1.setText("Add your projects here :");
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Submit.setText("Submit");
+        Submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SubmitActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Name");
 
-        jTextField1.setText("Enter project name");
+        projectNameField1.setText("Enter project name");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Enter one line description of a project");
-        jScrollPane1.setViewportView(jTextArea1);
+        projectDescriptionField1.setColumns(20);
+        projectDescriptionField1.setRows(5);
+        projectDescriptionField1.setText("Enter one line description of a project");
+        jScrollPane1.setViewportView(projectDescriptionField1);
 
         jLabel4.setText("Name");
 
-        jTextField2.setText("Enter project Title");
+        projectNameField2.setText("Enter project Title");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        projectDescriptionField2.setColumns(20);
+        projectDescriptionField2.setRows(5);
+        jScrollPane2.setViewportView(projectDescriptionField2);
 
         jLabel5.setText("Name");
 
-        jTextField3.setText("Enter Project Title");
+        projectNameField3.setText("Enter Project Title");
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Enter one line Description");
-        jScrollPane3.setViewportView(jTextArea3);
+        projectDescriptionField3.setColumns(20);
+        projectDescriptionField3.setRows(5);
+        projectDescriptionField3.setText("Enter one line Description");
+        jScrollPane3.setViewportView(projectDescriptionField3);
 
         jLabel6.setText("Name");
 
-        jTextField4.setText("Enter project Title");
+        projectNameField4.setText("Enter project Title");
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Enter one line description");
-        jScrollPane4.setViewportView(jTextArea4);
+        projectDescriptionField4.setColumns(20);
+        projectDescriptionField4.setRows(5);
+        projectDescriptionField4.setText("Enter one line description");
+        jScrollPane4.setViewportView(projectDescriptionField4);
 
         jLabel7.setText("Contact no.");
 
@@ -268,7 +268,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton1)
+                                .addComponent(Submit)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cgpa1Label)
                                     .addComponent(college2Label)
@@ -288,22 +288,22 @@ public class ResumeBuilder extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(projectNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2))
+                        .addComponent(projectNameField2))
                     .addComponent(jScrollPane2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
+                        .addComponent(projectNameField3))
                     .addComponent(jScrollPane3)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4))
+                        .addComponent(projectNameField4))
                     .addComponent(jScrollPane4))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
@@ -321,7 +321,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
                     .addComponent(emailLabel)
                     .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(projectNameField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -339,7 +339,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
                     .addComponent(school2Label)
                     .addComponent(school2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(projectNameField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -375,20 +375,20 @@ public class ResumeBuilder extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(Submit)
                         .addGap(57, 57, 57))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(projectNameField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(projectNameField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(99, 99, 99))))
@@ -441,9 +441,9 @@ public class ResumeBuilder extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SubmitActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
@@ -486,6 +486,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Submit;
     private javax.swing.JTextField cgpa1;
     private javax.swing.JLabel cgpa1Label;
     private javax.swing.JTextField cgpa2;
@@ -496,7 +497,6 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private javax.swing.JLabel college2Label;
     private javax.swing.JTextField email;
     private javax.swing.JLabel emailLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -513,14 +513,6 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField marks1;
     private javax.swing.JTextField marks2;
@@ -529,6 +521,14 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private javax.swing.JLabel nameLabel;
     private javax.swing.JMenuItem openNewWindow;
     private javax.swing.JLabel percentage1Label;
+    private javax.swing.JTextArea projectDescriptionField1;
+    private javax.swing.JTextArea projectDescriptionField2;
+    private javax.swing.JTextArea projectDescriptionField3;
+    private javax.swing.JTextArea projectDescriptionField4;
+    private javax.swing.JTextField projectNameField1;
+    private javax.swing.JTextField projectNameField2;
+    private javax.swing.JTextField projectNameField3;
+    private javax.swing.JTextField projectNameField4;
     private javax.swing.JTextField school1;
     private javax.swing.JLabel school1Label;
     private javax.swing.JTextField school2;
