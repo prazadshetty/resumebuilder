@@ -112,7 +112,7 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="Browse" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="217" max="32767" attributes="0"/>
+                              <EmptySpace pref="223" max="32767" attributes="0"/>
                               <Component id="Submit" min="-2" pref="96" max="-2" attributes="0"/>
                           </Group>
                           <Component id="college2" alignment="0" pref="379" max="32767" attributes="0"/>
@@ -513,7 +513,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="Browse">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Browse"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BrowseActionPerformed"/>

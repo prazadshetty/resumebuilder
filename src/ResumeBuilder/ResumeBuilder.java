@@ -201,7 +201,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
             }
         });
 
-        Browse.setText("Browse");
+        Browse.setText("Cancel");
         Browse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BrowseActionPerformed(evt);
@@ -213,12 +213,12 @@ public class ResumeBuilder extends javax.swing.JFrame {
         openNewWindow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         openNewWindow.setText("New");
         openNewWindow.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 openNewWindowAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         openNewWindow.addActionListener(new java.awt.event.ActionListener() {
@@ -289,14 +289,13 @@ public class ResumeBuilder extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Browse)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                                 .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(college2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                                .addComponent(cgpa1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                                .addComponent(university2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                                .addComponent(cgpa2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                                .addComponent(contactNumber)))))
+                            .addComponent(college2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                            .addComponent(cgpa1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                            .addComponent(university2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                            .addComponent(cgpa2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                            .addComponent(contactNumber, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
@@ -463,6 +462,26 @@ public class ResumeBuilder extends javax.swing.JFrame {
         String contactNo = contactNumber.getText();
         details.put("ContactNumber" , contactNo);
         
+        String projectName1 = projectNameField1.getText();
+        String projectDescription1 = projectDescriptionField1.getText();
+        details.put("ProjectName1" , projectName1);
+        details.put("projectDescription1" , projectDescription1);
+        
+        String projectName2 = projectNameField2.getText();
+        String projectDescription2 = projectDescriptionField2.getText();
+        details.put("ProjectName2" , projectName1);
+        details.put("projectDescription2" , projectDescription2);
+        
+        String projectName3 = projectNameField3.getText();
+        String projectDescription3 = projectDescriptionField3.getText();
+        details.put("ProjectName3" , projectName1);
+        details.put("projectDescription3" , projectDescription3);
+        
+        String projectName4 = projectNameField4.getText();
+        String projectDescription4 = projectDescriptionField4.getText();
+        details.put("ProjectName4" , projectName4);
+        details.put("projectDescription4" , projectDescription4);
+        
         return details;
     }
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -484,9 +503,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private void cgpa1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cgpa1KeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_cgpa1KeyTyped
-
-    private void openNewWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openNewWindowActionPerformed
-        // TODO add your handling code here:
+    public void clearForm() {
         name.setText("");
         email.setText("");
         cgpa1.setText("");
@@ -497,12 +514,17 @@ public class ResumeBuilder extends javax.swing.JFrame {
         university2.setText("");
         school1.setText("");
         school2.setText("");
+        marks1.setText("");
+        marks2.setText("");
         name.requestFocus();
+    }
+    private void openNewWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openNewWindowActionPerformed
+        // TODO add your handling code here:
+        clearForm();
     }//GEN-LAST:event_openNewWindowActionPerformed
     
     private void openNewWindowAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_openNewWindowAncestorAdded
         // TODO add your handling code here:
-        name.setText("");
     }//GEN-LAST:event_openNewWindowAncestorAdded
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -518,6 +540,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
             Logger.getLogger(ResumeBuilder.class.getName()).log(Level.SEVERE, null, ex);
         }*/
         Map details = getDetails();
+        
         resumeGenerator resume;
         resume = new resumeGenerator(details);
         try {
@@ -533,6 +556,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
 
     private void BrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseActionPerformed
         // TODO add your handling code here:      
+        System.exit(0);
     }//GEN-LAST:event_BrowseActionPerformed
 
     /**
