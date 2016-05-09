@@ -102,24 +102,24 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="Submit" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cgpa1Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="college2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="university2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cgpa2Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="cgpa1Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="college2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="university2Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cgpa2Label" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="Browse" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="217" max="32767" attributes="0"/>
+                              <Component id="Submit" min="-2" pref="96" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="college2" alignment="0" pref="379" max="32767" attributes="0"/>
                           <Component id="cgpa1" alignment="0" pref="379" max="32767" attributes="0"/>
                           <Component id="university2" alignment="0" pref="379" max="32767" attributes="0"/>
                           <Component id="cgpa2" alignment="0" pref="379" max="32767" attributes="0"/>
-                          <Component id="jTextField5" alignment="0" max="32767" attributes="0"/>
+                          <Component id="contactNumber" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -236,10 +236,13 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="contactNumber" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="Submit" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Submit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Browse" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -500,12 +503,20 @@
         <Property name="text" type="java.lang.String" value="Contact no."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="contactNumber">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enter Contact number"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="contactNumberActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="Browse">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Browse"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BrowseActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -5,6 +5,9 @@
  */
 package ResumeBuilder;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author peace
@@ -17,7 +20,6 @@ public class ResumeBuilder extends javax.swing.JFrame {
     public ResumeBuilder() {
         initComponents();
     }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,7 +73,8 @@ public class ResumeBuilder extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         projectDescriptionField4 = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        contactNumber = new javax.swing.JTextField();
+        Browse = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openNewWindow = new javax.swing.JMenuItem();
@@ -188,10 +191,17 @@ public class ResumeBuilder extends javax.swing.JFrame {
 
         jLabel7.setText("Contact no.");
 
-        jTextField5.setText("Enter Contact number");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        contactNumber.setText("Enter Contact number");
+        contactNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                contactNumberActionPerformed(evt);
+            }
+        });
+
+        Browse.setText("Browse");
+        Browse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrowseActionPerformed(evt);
             }
         });
 
@@ -267,21 +277,23 @@ public class ResumeBuilder extends javax.swing.JFrame {
                             .addComponent(email)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Submit)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cgpa1Label)
-                                    .addComponent(college2Label)
-                                    .addComponent(university2Label)
-                                    .addComponent(cgpa2Label)))
+                            .addComponent(cgpa1Label)
+                            .addComponent(college2Label)
+                            .addComponent(university2Label)
+                            .addComponent(cgpa2Label)
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(college2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                            .addComponent(cgpa1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                            .addComponent(university2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                            .addComponent(cgpa2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                            .addComponent(jTextField5))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Browse)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
+                                .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(college2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(cgpa1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(university2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(cgpa2, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+                                .addComponent(contactNumber)))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
@@ -373,9 +385,11 @@ public class ResumeBuilder extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(contactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Submit)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Submit)
+                            .addComponent(Browse))
                         .addGap(57, 57, 57))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,7 +410,44 @@ public class ResumeBuilder extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
+    /**
+     *
+     * @return
+     */
+    public Map getDetails() {
+        Map details;                    //stores values from form
+        details = new HashMap();        //to be passed to resumeGenerator.java
+        
+        String candidateName = name.getText();
+        details.put("Name" , candidateName);
+        
+        String candidateEmail;
+        candidateEmail = email.getText();
+        details.put("Email" , candidateEmail);
+        
+        String schoolX;
+        schoolX = school1.getText();
+        details.put("SchoolX" , schoolX);
+        
+        String percentageX = marks1.getText();
+        details.put("PercentageX" , percentageX);
+        
+        String schoolXII = school2.getText();
+        details.put("SchoolXII" , schoolXII);
+        
+        String percentageXII = marks2.getText();
+        details.put("PercentageXII" , percentageXII);
+        
+        String graduateCollege = college1.getText();
+        details.put("GraduationCollege" , graduateCollege);
+        
+        String graduateUniversity = university1.getText();
+        details.put("GraduateUniversity" , graduateUniversity);
+        
+        
+        return details;
+    }
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
@@ -442,12 +493,26 @@ public class ResumeBuilder extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
+        /* PDFTest pdftest = new PDFTest();
+        try {
+            pdftest.createPdf("blank.pdf");
+        } catch (IOException ex) {
+            Logger.getLogger(ResumeBuilder.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        Map details = getDetails();
+        resumeGenerator resume;
+        resume = new resumeGenerator(details);
+        resume.createResume();
     }//GEN-LAST:event_SubmitActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void contactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactNumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_contactNumberActionPerformed
+
+    private void BrowseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseActionPerformed
+        // TODO add your handling code here:      
+    }//GEN-LAST:event_BrowseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -486,6 +551,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Browse;
     private javax.swing.JButton Submit;
     private javax.swing.JTextField cgpa1;
     private javax.swing.JLabel cgpa1Label;
@@ -495,6 +561,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private javax.swing.JLabel college1Label;
     private javax.swing.JTextField college2;
     private javax.swing.JLabel college2Label;
+    private javax.swing.JTextField contactNumber;
     private javax.swing.JTextField email;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JLabel jLabel1;
@@ -513,7 +580,6 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField marks1;
     private javax.swing.JTextField marks2;
     private javax.swing.JLabel marks2Label;
