@@ -448,6 +448,20 @@ public class ResumeBuilder extends javax.swing.JFrame {
         String graduateUniversity = university1.getText();
         details.put("GraduateUniversity" , graduateUniversity);
         
+        String graduateCGPA = cgpa1.getText();
+        details.put("GraduationCGPA", graduateCGPA);
+        
+        String postGraduateCollege = college2.getText();
+        details.put("PostGraduationCollege" , postGraduateCollege);
+        
+        String postGraduateUniversity = university2.getText();
+        details.put("PostGraduateUniversity" , postGraduateUniversity);
+        
+        String postGraduateCGPA = cgpa2.getText();
+        details.put("PostGraduateCGPA", postGraduateCGPA);
+        
+        String contactNo = contactNumber.getText();
+        details.put("ContactNumber" , contactNo);
         
         return details;
     }
