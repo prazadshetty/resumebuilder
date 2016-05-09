@@ -9,8 +9,11 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.Desktop;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -25,7 +28,7 @@ public class resumeGenerator {
     resumeGenerator(Map detailsFromRB) {
         details = detailsFromRB;
     }
-    void createResume() {
+    void createResume() throws IOException {
         Document resume = new Document();
         try {
             
@@ -38,6 +41,8 @@ public class resumeGenerator {
         } catch(DocumentException | FileNotFoundException e){
             System.out.println(e.getMessage());
         }
+        File file = new File("resume.pdf");
+        Desktop.getDesktop().open(file);
         
     }
 }

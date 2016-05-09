@@ -5,8 +5,11 @@
  */
 package ResumeBuilder;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -503,7 +506,11 @@ public class ResumeBuilder extends javax.swing.JFrame {
         Map details = getDetails();
         resumeGenerator resume;
         resume = new resumeGenerator(details);
-        resume.createResume();
+        try {
+            resume.createResume();
+        } catch (IOException ex) {
+            Logger.getLogger(ResumeBuilder.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void contactNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactNumberActionPerformed
