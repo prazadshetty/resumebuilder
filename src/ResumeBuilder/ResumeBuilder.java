@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author peace
+ * @author krishna keshav
  */
 public class ResumeBuilder extends javax.swing.JFrame {
 
@@ -78,6 +78,8 @@ public class ResumeBuilder extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         contactNumber = new javax.swing.JTextField();
         Browse = new javax.swing.JButton();
+        skillsLabel = new javax.swing.JLabel();
+        skillsField = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         openNewWindow = new javax.swing.JMenuItem();
@@ -208,6 +210,10 @@ public class ResumeBuilder extends javax.swing.JFrame {
             }
         });
 
+        skillsLabel.setText("Skills");
+
+        skillsField.setText("Write your skills");
+
         jMenu1.setText("File");
 
         openNewWindow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
@@ -284,7 +290,8 @@ public class ResumeBuilder extends javax.swing.JFrame {
                             .addComponent(college2Label)
                             .addComponent(university2Label)
                             .addComponent(cgpa2Label)
-                            .addComponent(jLabel7))
+                            .addComponent(jLabel7)
+                            .addComponent(skillsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -295,7 +302,8 @@ public class ResumeBuilder extends javax.swing.JFrame {
                             .addComponent(cgpa1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
                             .addComponent(university2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
                             .addComponent(cgpa2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
-                            .addComponent(contactNumber, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addComponent(contactNumber, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(skillsField))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1)
@@ -388,11 +396,15 @@ public class ResumeBuilder extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(contactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Submit)
-                            .addComponent(Browse))
-                        .addGap(57, 57, 57))
+                            .addComponent(skillsLabel)
+                            .addComponent(skillsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Browse, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -482,6 +494,9 @@ public class ResumeBuilder extends javax.swing.JFrame {
         details.put("ProjectName4" , projectName4);
         details.put("projectDescription4" , projectDescription4);
         
+        String skills = skillsField.getText();
+        details.put("Skills" , skills);
+        
         return details;
     }
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
@@ -516,6 +531,7 @@ public class ResumeBuilder extends javax.swing.JFrame {
         school2.setText("");
         marks1.setText("");
         marks2.setText("");
+        skillsField.setText("");
         name.requestFocus();
     }
     private void openNewWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openNewWindowActionPerformed
@@ -644,6 +660,8 @@ public class ResumeBuilder extends javax.swing.JFrame {
     private javax.swing.JLabel school1Label;
     private javax.swing.JTextField school2;
     private javax.swing.JLabel school2Label;
+    private javax.swing.JTextField skillsField;
+    private javax.swing.JLabel skillsLabel;
     private javax.swing.JTextField university1;
     private javax.swing.JLabel university1Label;
     private javax.swing.JTextField university2;

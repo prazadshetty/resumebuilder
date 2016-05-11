@@ -5,10 +5,12 @@
  */
 package ResumeBuilder;
 
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.draw.LineSeparator;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,10 +20,10 @@ import java.util.Map;
 
 /**
  *
- * @author peace
+ * @author krishna keshav
  */
 public class resumeGenerator {
-    private final Map details; // store form values from ResumeBuilder.java
+    private final Map details; // stores form values from ResumeBuilder.java
     /**
      *
      */
@@ -34,8 +36,17 @@ public class resumeGenerator {
             
             PdfWriter.getInstance(resume, new FileOutputStream("resume.pdf"));
             resume.open();
-            resume.add(new Paragraph((String) details.get("Name")));
-            resume.add(new Paragraph((String) details.get("Email")));
+ //           resume.add(new Chunk("Name : "));
+            resume.add( new Paragraph((String) details.get("Name")) );
+ //           resume.add(new Chunk("Email : "));
+            resume.add( new Paragraph((String) details.get("Email")) );
+            
+            resume.add( Chunk.NEWLINE );
+            LineSeparator line = new LineSeparator();
+            resume.add(line);
+            resume.add( Chunk.NEWLINE );
+            
+            
             resume.close();
             
         } catch(DocumentException | FileNotFoundException e){
