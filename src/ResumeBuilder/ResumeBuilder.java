@@ -150,6 +150,12 @@ public class ResumeBuilder extends javax.swing.JFrame {
 
         emailLabel.setText("Email");
 
+        email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                emailKeyTyped(evt);
+            }
+        });
+
         jLabel1.setText("Add your projects here :");
 
         Submit.setText("Submit");
@@ -219,12 +225,12 @@ public class ResumeBuilder extends javax.swing.JFrame {
         openNewWindow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         openNewWindow.setText("New");
         openNewWindow.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 openNewWindowAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         openNewWindow.addActionListener(new java.awt.event.ActionListener() {
@@ -533,6 +539,12 @@ public class ResumeBuilder extends javax.swing.JFrame {
         marks2.setText("");
         skillsField.setText("");
         name.requestFocus();
+        projectNameField1.setText("");
+        contactNumber.setText("");
+        projectNameField2.setText("");
+        projectNameField3.setText("");
+        projectNameField4.setText("");
+        
     }
     private void openNewWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openNewWindowActionPerformed
         // TODO add your handling code here:
@@ -574,6 +586,11 @@ public class ResumeBuilder extends javax.swing.JFrame {
         // TODO add your handling code here:      
         System.exit(0);
     }//GEN-LAST:event_BrowseActionPerformed
+
+    private void emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyTyped
+                  // TODO add your handling code here:
+                  
+    }//GEN-LAST:event_emailKeyTyped
 
     /**
      * @param args the command line arguments
